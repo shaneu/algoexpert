@@ -1,17 +1,17 @@
 package twonumbersum
 
 func TwoNumberSum(array []int, target int) []int {
-	need := make(map[int]struct{})
+	nums := make(map[int]struct{})
 
 	for _, x := range array {
 		want := target - x
 
-		_, ok := need[want]
+		_, ok := nums[want]
 		if ok {
 			return []int{x, want}
 		}
 
-		need[x] = struct{}{}
+		nums[x] = struct{}{}
 	}
 
 	return make([]int, 0)
